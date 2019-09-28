@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var nombre: UITextField!
+    @IBOutlet weak var apellido: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ShowInfoViewController
+        
+        vc.name = nombre.text!
+        vc.lastName = apellido.text!
+        
+        
     }
 
 
